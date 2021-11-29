@@ -1,7 +1,16 @@
+import sys
+import os
 from math import factorial
 
 def main():
     n = 20
+
+    if (len(sys.argv) > 1):
+        try:
+            n = int(sys.argv[1])
+        except Exception:
+            print(f"Expected argument to be integer. Got: {sys.argv[1]}")
+            os._exit(1)
 
     results = []
 
