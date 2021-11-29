@@ -64,10 +64,17 @@ def list_to_line(lst, places=None):
 
 def binomial(n):
     coeffs = []
-    for i in range(n + 1):
+    factorial_n = factorial(n)
+    factorial_k = 1
+
+    for k in range(n + 1):
+        if (k > 0):
+            factorial_k *= k
+
         # calculate the binomial coefficient
         # n choose k = n! / k! * (n - k)!
-        coeffs.append(factorial(n) / (factorial(i) * factorial(n - i)))
+        coefficient = factorial_n / (factorial_k * factorial(n - k))
+        coeffs.append(coefficient)
 
     return coeffs
 
